@@ -1,21 +1,17 @@
---- === Lunette ===
----
---- Zero-config Spectacle Keybindings for Hammerspoon
---- Download: [https://github.com/scottwhudson/Lunette/blob/master/Spoons/Lunette.spoon.zip](https://github.com/scottwhudson/Lunette/blob/master/Spoons/Lunette.spoon.zip)
 local obj = {}
 obj.__index = obj
 
---- Metadata
+-- Metadata
 obj.name = "Lunette"
-obj.version = "0.3.1"
+obj.version = "0.4"
 obj.author = "Scott Hudson <scott.w.hudson@gmail.com>"
 obj.license = "MIT"
 obj.homepage = "https://github.com/scottwhudson/Lunette"
 
---- disable animation
+-- disable animation
 hs.window.animationDuration = 0
 
---- Internal function used to find our location, so we know where to load files from
+-- Internal function used to find our location, so we know where to load files from
 local function script_path()
   local str = debug.getinfo(2, "S").source:sub(2)
   return str:match("(.*/)")
@@ -25,7 +21,7 @@ obj.spoonPath = script_path()
 obj.Command = dofile(obj.spoonPath.."/command.lua")
 obj.history = dofile(obj.spoonPath.."/history.lua"):init()
 
-obj.defaultHotkeys = {
+obj.DefaultMapping = {
   leftHalf = {
     {{"cmd", "alt"}, "left"},
   },
@@ -86,7 +82,7 @@ function obj:bindHotkeys(userBindings)
   print("Lunette: Binding Hotkeys")
 
   local userBindings = userBindings or {}
-  local bindings = self.defaultHotkeys
+  local bindings = self.DefaultMapping
 
   for command, mappings in pairs(userBindings) do
     bindings[command] = mappings

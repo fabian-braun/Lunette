@@ -231,15 +231,6 @@ function obj:leftTwoThirds(window, screen)
   return window
 end
 
-function obj:leftThreeQuarters(window, screen)
-  window.x = screen.x
-  window.y = screen.y
-  window.w = (screen.w // 4) * 3
-  window.h = screen.h
-
-  return window
-end
-
 function obj:rightHalf(window, screen)
   window.x = (screen.w // 2) + screen.x
   window.y = screen.y
@@ -262,15 +253,6 @@ function obj:rightTwoThirds(window, screen)
   window.x = (screen.w // 3) + screen.x
   window.y = screen.y
   window.w = (screen.w // 3) * 2
-  window.h = screen.h
-
-  return window
-end
-
-function obj:rightThreeQuarters(window, screen)
-  window.x = (screen.w // 4) + screen.x
-  window.y = screen.y
-  window.w = (screen.w // 4) * 3
   window.h = screen.h
 
   return window
