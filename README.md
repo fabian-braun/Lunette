@@ -4,6 +4,11 @@
 
 Lunette is an easily configurable and extendible Hammerspoon package that implements all of the Spectacle keybindings.
 
+## Fork
+
+Forked from https://github.com/scottwhudson/Lunette and stripped down to the bare minimum I need.
+All credit goes to the original author :)
+
 ## Default Keybindings
 
 Lunette comes with a set of default keybindings. See installation for more on altering and disabling default keybindings.
