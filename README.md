@@ -36,17 +36,19 @@ Lunette comes with a set of default keybindings. See installation for more on al
 
 ## Installation
 
-1. Download and Install [Hammerspoon](https://github.com/Hammerspoon/hammerspoon/releases)
-1. Download and unzip `Lunette.spoon.zip` to `~/.hammerspoon/Spoons/` or clone this repository and symlink `Lunette.spoon` to `~/.hammerspoon/Spoons`
-1. Make sure you've enabled Hammerspoon with MacOS via System Preferences > Security & Privacy
-1. Load Lunette in `~/.hammerspoon/init.lua` and bind the Lunette hotkeys:
+1. Clone this repo
+2. Symlink it as a Spoon
+
+   ```shell
+   ln -s ./Lunette/Source/Lunette.spoon ~/.hammerspoon/Spoons/Lunette.Spoon
+   ```
+
+3. Use it
 
     ```lua
     -- ~/.hammerspoon/init.lua
     hs.spoons.use("Lunette", { hotkeys = "default" })
     ```
-
-    OPTIONAL:
 
     Override default hotkey definitions by passing a custom mapping table to `bindHotkeys()`
 
@@ -69,11 +71,9 @@ Lunette comes with a set of default keybindings. See installation for more on al
     spoon.Lunette:bindHotkeys(customBindings)
     ```
 
-## Contribution
-
-Feel free to submit an issue/feature request/pull request.
-
 ## Changelog
+
+## no more releases, just a git repo
 
 ## v0.3.1
 Bugfix:
