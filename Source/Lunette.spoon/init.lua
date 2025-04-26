@@ -7,10 +7,10 @@ obj.__index = obj
 
 --- Metadata
 obj.name = "Lunette"
-obj.version = "0.3.1"
-obj.author = "Scott Hudson <scott.w.hudson@gmail.com>"
+obj.version = "0.3.2"
+obj.author = "Fabian Braun"
 obj.license = "MIT"
-obj.homepage = "https://github.com/scottwhudson/Lunette"
+obj.homepage = "https://github.com/fabian-braun/Lunette"
 
 --- disable animation
 hs.window.animationDuration = 0
@@ -23,7 +23,6 @@ end
 obj.spoonPath = script_path()
 
 obj.Command = dofile(obj.spoonPath.."/command.lua")
-obj.history = dofile(obj.spoonPath.."/history.lua"):init()
 
 obj.defaultHotkeys = {
   leftHalf = {
@@ -31,24 +30,6 @@ obj.defaultHotkeys = {
   },
   rightHalf = {
     {{"cmd", "alt"}, "right"},
-  },
-  topHalf = {
-    {{"cmd", "alt"}, "up"},
-  },
-  bottomHalf = {
-    {{"cmd", "alt"}, "down"},
-  },
-  topLeft = {
-    {{"ctrl", "cmd"}, "Left"},
-  },
-  topRight = {
-    {{"ctrl", "cmd"}, "Right"},
-  },
-  bottomLeft = {
-    {{"ctrl", "cmd", "shift"}, "Left"},
-  },
-  bottomRight = {
-    {{"ctrl", "cmd", "shift"}, "Right"},
   },
   fullScreen = {
     {{"cmd", "alt"}, "F"},
@@ -67,12 +48,6 @@ obj.defaultHotkeys = {
   },
   shrink = {
     {{"ctrl", "alt", "shift"}, "Left"},
-  },
-  undo = {
-    {{"alt", "cmd"}, "Z"},
-  },
-  redo = {
-    {{"alt", "cmd", "shift"}, "Z"},
   },
   nextDisplay = {
     {{"ctrl", "alt", "cmd"}, "Right"},
@@ -111,16 +86,9 @@ function obj:exec(commandName)
   local currentFrame = window:frame()
   local newFrame
 
-  if commandName == "undo" then
-    newFrame = self.history:retrievePrevState()
-  elseif commandName == "redo" then
-    newFrame = self.history:retrieveNextState()
-  else
-    print("Lunette: " .. commandName)
-    print(self.Command[commandName])
-    newFrame = self.Command[commandName](windowFrame, screenFrame)
-    self.history:push(currentFrame, newFrame)
-  end
+  print("Lunette: " .. commandName)
+  print(self.Command[commandName])
+  newFrame = self.Command[commandName](windowFrame, screenFrame)
 
   window:setFrame(newFrame)
 end

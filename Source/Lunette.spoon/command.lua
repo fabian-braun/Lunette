@@ -59,132 +59,6 @@ obj.center = function(windowFrame, screenFrame)
   return newFrame
 end
 
---- Command:topHalf(windowFrame, screenFrame)
---- Method
---- Inspects current screen frame position, determines how to resize given frame
---- and calls corresponding resize method
----
---- Returns:
---- * A screenFrame to be rendered
-obj.topHalf = function(windowFrame, screenFrame)
-  local newFrame
-
-  if Validate:topHalf(windowFrame, screenFrame) then
-    newFrame = Resize:topTwoThirds(windowFrame, screenFrame)
-  elseif Validate:topTwoThirds(windowFrame, screenFrame) then
-    newFrame = Resize:topThird(windowFrame, screenFrame)
-  else
-    newFrame = Resize:topHalf(windowFrame, screenFrame)
-  end
-
-  return newFrame
-end
-
---- Command:bottomHalf(windowFrame, screenFrame)
---- Method
---- Inspects current screen frame position, determines how to resize given frame
---- and calls corresponding resize method
----
---- Returns:
---- * A screenFrame to be rendered
-obj.bottomHalf = function(windowFrame, screenFrame)
-  local newFrame
-
-  if Validate:bottomHalf(windowFrame, screenFrame) then
-    newFrame = Resize:bottomTwoThirds(windowFrame, screenFrame)
-  elseif Validate:bottomTwoThirds(windowFrame, screenFrame) then
-    newFrame = Resize:bottomThird(windowFrame, screenFrame)
-  else
-    newFrame = Resize:bottomHalf(windowFrame, screenFrame)
-  end
-
-  return newFrame
-end
-
---- Command:topLeft(windowFrame, screenFrame)
---- Method
---- Inspects current screen frame position, determines how to resize given frame
---- and calls corresponding resize method
----
---- Returns:
---- * A screenFrame to be rendered
-obj.topLeft = function(windowFrame, screenFrame)
-  local newFrame
-
-  if Validate:topLeftHalf(windowFrame, screenFrame) then
-    newFrame = Resize:topLeftTwoThirds(windowFrame, screenFrame)
-  elseif Validate:topLeftTwoThirds(windowFrame, screenFrame) then
-    newFrame = Resize:topLeftThird(windowFrame, screenFrame)
-  else
-    newFrame = Resize:topLeftHalf(windowFrame, screenFrame)
-  end
-
-  return newFrame
-end
-
---- Command:topRight(windowFrame, screenFrame)
---- Method
---- Inspects current screen frame position, determines how to resize given frame
---- and calls corresponding resize method
----
---- Returns:
---- * A screenFrame to be rendered
-obj.topRight = function(windowFrame, screenFrame)
-  local newFrame
-
-  if Validate:topRightHalf(windowFrame, screenFrame) then
-    newFrame = Resize:topRightTwoThirds(windowFrame, screenFrame)
-  elseif Validate:topRightTwoThirds(windowFrame, screenFrame) then
-    newFrame = Resize:topRightThird(windowFrame, screenFrame)
-  else
-    newFrame = Resize:topRightHalf(windowFrame, screenFrame)
-  end
-
-  return newFrame
-end
-
---- Command:bottomRight(windowFrame, screenFrame)
---- Method
---- Inspects current screen frame position, determines how to resize given frame
---- and calls corresponding resize method
----
---- Returns:
---- * A screenFrame to be rendered
-obj.bottomRight = function(windowFrame, screenFrame)
-  local newFrame
-
-  if Validate:bottomRightHalf(windowFrame, screenFrame) then
-    newFrame = Resize:bottomRightTwoThirds(windowFrame, screenFrame)
-  elseif Validate:bottomRightTwoThirds(windowFrame, screenFrame) then
-    newFrame = Resize:bottomRightThird(windowFrame, screenFrame)
-  else
-    newFrame = Resize:bottomRightHalf(windowFrame, screenFrame)
-  end
-
-  return newFrame
-end
-
---- Command:bottomLeft(windowFrame, screenFrame)
---- Method
---- Inspects current screen frame position, determines how to resize given frame
---- and calls corresponding resize method
----
---- Returns:
---- * A screenFrame to be rendered
-obj.bottomLeft = function(windowFrame, screenFrame)
-  local newFrame
-
-  if Validate:bottomLeftHalf(windowFrame, screenFrame) then
-    newFrame = Resize:bottomLeftTwoThirds(windowFrame, screenFrame)
-  elseif Validate:bottomLeftTwoThirds(windowFrame, screenFrame) then
-    newFrame = Resize:bottomLeftThird(windowFrame, screenFrame)
-  else
-    newFrame = Resize:bottomLeftHalf(windowFrame, screenFrame)
-  end
-
-  return newFrame
-end
-
 --- Command:rightHalf(windowFrame, screenFrame)
 --- Method
 --- Inspects current screen frame position, determines how to resize given frame
@@ -244,14 +118,8 @@ obj.nextThird = function(windowFrame, screenFrame)
 
   if Validate:leftThird(windowFrame, screenFrame) then
     newFrame = Resize:centerVerticalThird(windowFrame, screenFrame)
-  elseif Validate:centerVerticalThird(windowFrame, screenFrame) then
-    newFrame = Resize:rightThird(windowFrame, screenFrame)
-  elseif Validate:rightThird(windowFrame, screenFrame) then
-    newFrame = Resize:topThird(windowFrame, screenFrame)
-  elseif Validate:topThird(windowFrame, screenFrame) then
-    newFrame = Resize:centerHorizontalThird(windowFrame, screenFrame)
   elseif Validate:centerHorizontalThird(windowFrame, screenFrame) then
-    newFrame = Resize:bottomThird(windowFrame, screenFrame)
+    newFrame = Resize:rightThird(windowFrame, screenFrame)
   else
     newFrame = Resize:leftThird(windowFrame, screenFrame)
   end
@@ -270,15 +138,9 @@ obj.prevThird = function(windowFrame, screenFrame)
   local newFrame
 
   if Validate:leftThird(windowFrame, screenFrame) then
-    newFrame = Resize:bottomThird(windowFrame, screenFrame)
-  elseif Validate:bottomThird(windowFrame, screenFrame) then
-    newFrame = Resize:centerHorizontalThird(windowFrame, screenFrame)
-  elseif Validate:centerHorizontalThird(windowFrame, screenFrame) then
-    newFrame = Resize:topThird(windowFrame, screenFrame)
-  elseif Validate:topThird(windowFrame, screenFrame) then
     newFrame = Resize:rightThird(windowFrame, screenFrame)
   elseif Validate:rightThird(windowFrame, screenFrame) then
-    newFrame = Resize:centerVerticalThird(windowFrame, screenFrame)
+    newFrame = Resize:centerHorizontalThird(windowFrame, screenFrame)
   else
     newFrame = Resize:leftThird(windowFrame, screenFrame)
   end
