@@ -58,14 +58,7 @@ function obj:rightThreeQuarters(window, screen)
          window.h == screen.h
 end
 
-function obj:centerHorizontalThird(window, screen)
-  return window.x == screen.x and
-         window.y == (screen.h // 3) and
-         window.w == screen.w and
-         window.h == (screen.h // 3)
-end
-
-function obj:centerVerticalThird(window, screen)
+function obj:centerThird(window, screen)
   return window.x == (screen.w // 3) and
          window.y == screen.y and
          window.w == (screen.w // 3) and

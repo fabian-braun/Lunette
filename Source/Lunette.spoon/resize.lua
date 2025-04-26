@@ -114,16 +114,7 @@ function obj:rightThreeQuarters(window, screen)
   return window
 end
 
-function obj:centerHorizontalThird(window, screen)
-  window.x = screen.x
-  window.y = screen.h // 3
-  window.w = screen.w
-  window.h = screen.h // 3
-
-  return window
-end
-
-function obj:centerVerticalThird(window, screen)
+function obj:centerThird(window, screen)
   window.x = screen.w // 3
   window.y = screen.y
   window.w = screen.w // 3

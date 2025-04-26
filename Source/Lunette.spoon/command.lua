@@ -117,8 +117,8 @@ obj.nextThird = function(windowFrame, screenFrame)
   local newFrame
 
   if Validate:leftThird(windowFrame, screenFrame) then
-    newFrame = Resize:centerVerticalThird(windowFrame, screenFrame)
-  elseif Validate:centerHorizontalThird(windowFrame, screenFrame) then
+    newFrame = Resize:centerThird(windowFrame, screenFrame)
+  elseif Validate:centerThird(windowFrame, screenFrame) then
     newFrame = Resize:rightThird(windowFrame, screenFrame)
   else
     newFrame = Resize:leftThird(windowFrame, screenFrame)
@@ -140,7 +140,7 @@ obj.prevThird = function(windowFrame, screenFrame)
   if Validate:leftThird(windowFrame, screenFrame) then
     newFrame = Resize:rightThird(windowFrame, screenFrame)
   elseif Validate:rightThird(windowFrame, screenFrame) then
-    newFrame = Resize:centerHorizontalThird(windowFrame, screenFrame)
+    newFrame = Resize:centerThird(windowFrame, screenFrame)
   else
     newFrame = Resize:leftThird(windowFrame, screenFrame)
   end
