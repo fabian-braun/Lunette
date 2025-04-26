@@ -13,26 +13,18 @@ All credit goes to the original author :)
 
 Lunette comes with a set of default keybindings. See installation for more on altering and disabling default keybindings.
 
-| CommandName  | (Chord) Activator |
-| -------------|:-------------------:|
-| `center`     | (⌥ ⌘) C          |
-| `fullScreen` | (⌥ ⌘) F          |
-| `leftHalf`   | (⌥ ⌘) ←          |
-| `rightHalf`  | (⌥ ⌘) →          |
-| `topHalf`    | (⌥ ⌘) ↑          |
-| `bottomHalf` | (⌥ ⌘) ↓          |
-| `topLeft`    | (⌃ ⌘) ←          |
-| `bottomLeft` | (⌃ ⌘ ⇧) ←       |
-| `topRight`   | (⌃ ⌘) →          |
-| `bottomRight`| (⌃ ⌘ ⇧) →       |
-| `nextDisplay`| (⌃ ⌥ ⌘) →       |
-| `prevDisplay`| (⌃ ⌥ ⌘) ←       |
-| `nextThird`  | (⌃ ⌥) →       |
-| `prevThird`  | (⌃ ⌥) ←       |
-| `enlarge`    | (⌃ ⌥ ⇧) →       |
-| `shrink`     | (⌃ ⌥ ⇧) ←       |
-| `undo`       | (⌥ ⌘) Z          |
-| `redo`       | (⌥ ⌘ ⇧) Z       |
+| CommandName   | (Chord) Activator |
+|---------------|:-----------------:|
+| `center`      |      (⌥ ⌘) C      |
+| `fullScreen`  |      (⌥ ⌘) F      |
+| `leftHalf`    |      (⌥ ⌘) ←      |
+| `rightHalf`   |      (⌥ ⌘) →      |
+| `nextDisplay` |     (⌃ ⌥ ⌘) →     |
+| `prevDisplay` |     (⌃ ⌥ ⌘) ←     |
+| `nextThird`   |      (⌃ ⌥) →      |
+| `prevThird`   |      (⌃ ⌥) ←      |
+| `enlarge`     |     (⌃ ⌥ ⇧) →     |
+| `shrink`      |     (⌃ ⌥ ⇧) ←     |
 
 ## Installation
 
